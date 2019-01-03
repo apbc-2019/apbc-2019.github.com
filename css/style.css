@@ -489,7 +489,7 @@ h3 {
 
 /* Mobile Nav body classes */
 body.mobile-nav-active {
-  overflow: hidden;
+  overflow: scroll;
 }
 
 body.mobile-nav-active #mobile-nav {
