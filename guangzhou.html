@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <script src="head.js"></script>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	img{display:block;}
+	.banner {width:100%;height:530px;margin:0% auto;background:#cccccc;overflow:hidden;position:relative;z-index:1}
+	.banner ul { position:absolute;left:0;top:0;z-index:100;}
+	.banner ul li { display:block;width:1350px;height:550px;float:left;}
+	.banner .con { position:absolute; left:45%; bottom:3%;z-index:101; }
+	.banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
+	.banner .con a.active { background:#fff;}
+	.banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
+	.banner .left { position:absolute; top:40%;left:2%;z-index:103;}
+	.banner .right { position:absolute; top:40%;right:2%;z-index:103;}
+</style>
+<body>
+
+
+<div class="banner">
+	<ul>
+    	<li><img src="image/1.jpg" /></li>
+        <li><img src="image/2.jpg" /></li>
+        <li><img src="image/3.jpg" /></li>
+    </ul>
+    <div class="con"></div>
+</div>
+<script type="text/javascript">
+	var index = 0;
+	var imgnum = $('.banner ul li').length;
+	var nmun='';
+	var imgwidth = $('.banner ul li').width();
+	var allimgwidth = imgwidth*imgnum;
+	$('.banner ul').css('width',allimgwidth);
+	
+	
+	$('.banner').hover(function(){
+		clearInterval(p);
+		$('.banner .u').fadeIn();
+	},function(){
+		pic();
+		$('.banner .u').fadeOut();
+		});
+	
+	function pic(){
+		
+		p=setInterval(function(){
+			index++;
+			
+			if(index>=imgnum){
+				index=0;
+			}
+			
+			selectimg(index);
+	
+		},3000);
+		
+	}
+	
+	function selectimg(index){
+		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
+		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+	}
+	
+	
+	$('.banner .left').click(function(){
+		index-=1;
+		if(index<0){
+				index=imgnum-1;
+			}
+		selectimg(index);
+		
+	});
+	
+	$('.banner .right').click(function(){
+		index+=1;
+		if(index>imgnum-1){
+				index=0;
+			}
+		selectimg(index);
+		
+	});
+	
+	for(var ni=0;ni<imgnum;ni++){
+		nmun +="<a href='javascript:;'></a>";
+	}
+	$('.banner .con').html(nmun);
+	$('.banner .con a').eq(0).addClass('active');
+	
+	$('.con a').each(function(i){
+		$(this).click(function(){
+		    index=i;
+			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
+			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+		});
+	});	
+	
+	pic();
+</script>
+<!--==========================
+      About Section
+    ============================-->
+  <section id="clients" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<br><br>
+<h2> About GUANGZHOU</h2>
+          
+          
+        </div>
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="image/travel1.jpg" alt="">
+          </div>
+          <div class="col-lg-6 content">
+         
+			
+         <p style="text-align: justify; margin-top: 0px;line-height:30px">
+               Guangzhou , a prosperous metropolis full of vigor, is the capital city of Guangdong Province located along the south coastline of China. Being an excellent port on the Pearl River navigable to the South China Sea, and with fast accessibility to Hong Kong and Macau, the city serves as the political, economic, scientific, educational and cultural center in Guangdong area. Being the first cities benefited from the Reform and Opening Up policy since 1978, the city acts as the pioneer of the economic development of the country, with numerous enterprises, which offer many job opportunities and make the city a heavily populated area. Guangzhou is especially prosperous in commerce, tourism, dining, finance and real estate. For travelers, the city shows much attraction through its famous sights such as the Five Ram Statue in Yuexiu Park and Pearl River .</p>
+</div> </div></div>
+
+
+
+
+<!--==========================
+      Our Team Section
+    ============================-->
+
+
+
+
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Attractions</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">Guangzhou is one of the twenty-four famous historical and cultural cities in China. It does not, however, have the amount of cultural attractions found in some cities such as Beijing and Xi'an.
+Here is a brief list of Top Attractions to do in the city. </p>
+</p> </div></div></section><!-- #clients -->
+    <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team1.jpg" alt=""></div>
+              <div class="details">
+                <span>Yuexiu Park</span>
+                <div class="social">
+                </div></div></div></div>
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team2.jpg" alt=""></div>
+              <div class="details">
+                <span>The Pearl River</span>
+                <div class="social"></div></div></div></div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team3.jpg" alt=""></div>
+              <div class="details">
+                <span>Ancestral Temple of the Chen Family</span>
+                <div class="social"></div></div></div></div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/team4.jpg" alt=""></div>
+              <div class="details">
+                <span>Sun Yat-sen Memorial Hallt</span>
+                <div class="social"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Food</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">Guangzhou is considered as the paradise for gourmands in south China. Its dish represents well the Cantonese Cuisine, which is one among the most famous eight Chinese cuisines. A large amount of time-honored restaurants and quality new restaurants serve various authentic local dishes, snacks and drinks. The most popular restaurants gather around the old city area, including the Dongshan District, Yuexiu District and Liwan District. Panfu Road, West Jiangnan Road and East Huifu Road are recommended food streets for tourists to feel the local eating customs such as Yam Cha (Drinking Tea), having various kinds of soup or delicious Sampan Porridge.</p>
+</p> </div></div></section><!-- #clients -->
+    <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/food1.jpg" alt=""></div>
+              <div class="details">
+                <span>White Cut Chicken (Bai Qie Ji)</span>
+                <div class="social">
+                </div></div></div></div>
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/food2.jpg" alt=""></div>
+              <div class="details">
+                <span>Soup Rice (Bao Zai Fan)</span>
+                <div class="social"></div></div></div></div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/food3.jpg" alt=""></div>
+              <div class="details">
+                <span>Shrimp Dumplings</span>
+                <div class="social"></div></div></div></div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+              <div class="pic"><img src="img/food4.jpg" alt=""></div>
+              <div class="details">
+                <span>Egg Tart</span>
+                <div class="social"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+
+
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Shopping</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">With the fame of the shoppers' heaven with ton of quality goods at affordable prices, the city is prosperous with various kinds of commercial streets. Shangxiajiu Road, Beijing Road and Shifu Road commercial area, full of time-honored brands and modern shopping malls, is the most traditional and popular among the locals. Yide Road is the best choice for seafood and dried food. Wende Road is the right place for curios and tourist souvenirs. For those seeking for clothes and current fashions, Baima Clothes Market, World Trade Mall and Teemall should not be missed. </p>
+</p> </div></div></section><!-- #clients -->
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

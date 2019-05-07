@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <script src="head.js"></script>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	img{display:block;}
+	.banner {width:100%;height:530px;margin:0% auto;background:#cccccc;overflow:hidden;position:relative;z-index:1}
+	.banner ul { position:absolute;left:0;top:0;z-index:100;}
+	.banner ul li { display:block;width:1350px;height:550px;float:left;}
+	.banner .con { position:absolute; left:45%; bottom:3%;z-index:101; }
+	.banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
+	.banner .con a.active { background:#fff;}
+	.banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
+	.banner .left { position:absolute; top:40%;left:2%;z-index:103;}
+	.banner .right { position:absolute; top:40%;right:2%;z-index:103;}
+</style>
+<body>
+
+
+<div class="banner">
+	<ul>
+    	<li><img src="image/1.jpg" /></li>
+        <li><img src="image/2.jpg" /></li>
+        <li><img src="image/3.jpg" /></li>
+    </ul>
+    <div class="con"></div>
+</div>
+<script type="text/javascript">
+	var index = 0;
+	var imgnum = $('.banner ul li').length;
+	var nmun='';
+	var imgwidth = $('.banner ul li').width();
+	var allimgwidth = imgwidth*imgnum;
+	$('.banner ul').css('width',allimgwidth);
+	
+	
+	$('.banner').hover(function(){
+		clearInterval(p);
+		$('.banner .u').fadeIn();
+	},function(){
+		pic();
+		$('.banner .u').fadeOut();
+		});
+	
+	function pic(){
+		
+		p=setInterval(function(){
+			index++;
+			
+			if(index>=imgnum){
+				index=0;
+			}
+			
+			selectimg(index);
+	
+		},3000);
+		
+	}
+	
+	function selectimg(index){
+		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
+		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+	}
+	
+	
+	$('.banner .left').click(function(){
+		index-=1;
+		if(index<0){
+				index=imgnum-1;
+			}
+		selectimg(index);
+		
+	});
+	
+	$('.banner .right').click(function(){
+		index+=1;
+		if(index>imgnum-1){
+				index=0;
+			}
+		selectimg(index);
+		
+	});
+	
+	for(var ni=0;ni<imgnum;ni++){
+		nmun +="<a href='javascript:;'></a>";
+	}
+	$('.banner .con').html(nmun);
+	$('.banner .con a').eq(0).addClass('active');
+	
+	$('.con a').each(function(i){
+		$(this).click(function(){
+		    index=i;
+			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
+			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+		});
+	});	
+	
+	pic();
+</script>
+
+ <!--==========================
+      Our Team Section
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Transportation</h2>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">
+Guangzhou, the south gate of China, has a satisfying transport system radiating to the whole country and even the world. It has direct flights with Los Angeles of US, Vancouver of Canada, London of UK, Paris of France, Amsterdam of the Netherlands, Sydney and Melbourne in Australia, Singapore, Kuala Lumpur of Malaysia, Bangkok of Thailand, and many other Asian destinations. If you are already within China, a wide range of vehicles can facilitate your trip to and from the city, including the planes, trains, long-distance buses and ships. The urban transportation is generally good due to the orderly planning roads and the developed city-buses, taxis and subways.
+</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+ <div class="pic"><a href="image/map1.png" target="_blank"><img src="img/map11.png" alt=""></a></div>
+              <div class="details">
+                <span>Guangzhou China Map</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+ <div class="pic"><a href="image/map2.png" target="_blank"><img src="img/map22.png" alt=""></a></div>
+              <div class="details">
+                <span>Guangzhou City Map</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+ <div class="pic"><a href="image/map3.png" target="_blank"><img src="img/map33.png" alt=""></a></div>
+              <div class="details">
+                <span>Guangzhou Tourist Map</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="member">
+             <div class="pic"><a href="image/map4.png" target="_blank"><img src="img/map44.png" alt=""></a></div>
+              <div class="details">
+                <span>Guangzhou Metro Map</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Air</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">Guangzhou Baiyun International Airport is about 17 miles (28 km) from the city center. It is one of the three busiest air transportation hubs in China. There are totally 123 scheduled flights in the airport, and 86 of them are domestic flights between the city and major Chinese cities like Beijing, Shanghai and Xi'an. Major cities worldwide can be reached in 15 hours. The airport's flight network covers South and Southeast Asian countries including Vietnam, Laos, Burma, India, Singapore, Malaysia and Indonesia. In addition, there are flights to Los Angeles, Paris, Amsterdam, Melbourne, Sydney, Tokyo, Seoul and Lagos.
+
+Baiyun Airport boasts very convenient ground transportation system. This system is mainly made up of taxis, six airport express bus lines (Line1, Line2A, Line2B, Line3, Line4 and Jinshazhou Line), ten airport shuttle bus lines (Line5, Line6A, Line6B, Line7A, Line7B, Line8A1, Line8A2, Line8B, Line9 and Line10), and frequent airport intercity bus between the city and other cities in Guangdong Privince. </p>
+</p> </div></div></section><!-- #clients -->
+
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Train</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">Guangzhou has three railway stations handling passenger transport.
+
+The Railway Station at Huanshi Road is the largest and the most important one, operating trains between the city and Beijing, Wuhan, Nanjing, Chengdu, Chongqing, Xi'an, Lhasa and many other China cities. The East Railway Station (Tianhe Railway Station) mainly provides through trains from to Hong Kong and frequent bullet trains between to Shenzhen. The North Railway Station in Huadu District is a small station mainly operates bullet trains between the city and Wuhan.</p>
+</p> </div></div></section><!-- #clients -->
+
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Long-distance Bus Stations</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">This city has a convenient expressway system radiating from the downtown area to cities countrywide especially cities in and around Guangdong Province. Now there are mainly 20 big long-distance bus stations, among which the Provincial Bus Station, Guangzhou Passenger Station, Fangcun Bus Station, Tianhe Bus Station and Yuexiu South Bus Station are the major ones.</p>
+</p> </div></div></section><!-- #clients -->
+
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Ports</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px">It is one of the ten most famous port cities in China. Guangzhou Port is made up of Humen Port, Xinsha Port, Huangpu Port and many other inner ports. The ship routes lead to more than 100 domestic ports and over 300 foreign ports. Some ports there provide passenger transport service. Panyu Lianhuashan Port provides high speed passenger liners to reach Hong Kong daily. Huangpu Port offers ships to Xiuying Port, Haikou.</p>
+</div></div></section><!-- #clients -->
+
+<section id="clients" class="wow fadeInUp">
+<div class="container">
+<div class="section-header">
+<font size="5" face="sans-serif"><b>Urban Transportation</b></font>         
+<div style="width:60px; margin-top:6px;border:1px solid #00b1e4;"></div>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px"><b><font size="4.5">Metro</b></font>
+There are 14 metro lines used in the city at present. The subway utilizes a stage fare system. The longer the journey the more you pay. At present, Guangzhou metro has connected most important parts of the city, including Baiyun Airport, the Railway Station, East Railway Station, South Railway Station and Foshan City.
+</p>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px"><b><font size="4.5">City-Bus</b></font>
+City buses are easily accessible in the city, including daytime lines, night lines, airport shuttle buses, tourist buses and BRT lines. Apart from that, three sightseeing bus lines are in service which take tourists to the major attractions in town.</p>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px"><b><font size="4.5">Taxi</b></font>
+A taxi charges CNY10 for the first 2.5 kilometers (1.55 miles) and CNY2.6 for succeeding each kilometer (0.6 mile). When a taxi runs farther than 35 kilometers (21.7 miles), extra 50% will be automatically charged for empty return.</p>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px"><b><font size="4.5">Dockless Sharing Bikes</b></font>
+There are various dockless bikes hitting the streets of the city, including Mobike, ofo, and Bluegogo. Download the corresponding app and you can use these bikes after the ID verification and paying the deposit. The deposit usually costs CNY 199 or CNY 299 and it charges CNY 0.5 - 1 for a 30 minutes' ride.</p>
+ <p style="text-align: justify; margin-top: 15px;line-height:30px"><b><font size="4.5">Water Bus</b></font>
+The water transport in this city is mainly made up of Suigang Port, Zhoutouzui Port, Zengcheng Xintang Port, Panyu Lianhuashan Port and Nansha Port. There are six water buses running along the Pearl River, supplying residents and tourists with a more convenient transport service with four piers along the line - Zhongda Ferry Pier, Tianzi Ferry Pier, Xidi Ferry Pier and Fangcun Ferry Pier. The whole journey takes 40 minutes and costs CNY2.
+</p>
+
+</p> </div></div></section><!-- #clients -->
+
+
+
+
+</body>
+</html>
