@@ -489,7 +489,7 @@ h3 {
 
 /* Mobile Nav body classes */
 body.mobile-nav-active {
-  overflow: scroll;
+  overflow: hidden;
 }
 
 body.mobile-nav-active #mobile-nav {
@@ -575,12 +575,12 @@ Inner Banner
 }
 
 #about .about-img {
-  overflow: hidden;
+
+
 }
 
 #about .about-img img {
-  margin-left: -15px;
-  max-width: 100%;
+
 }
 
 @media (max-width: 768px) {
@@ -588,8 +588,8 @@ Inner Banner
     height: auto;
   }
   #about .about-img img {
-    margin-left: 0;
-    padding-bottom: 30px;
+    
+   
   }
 }
 
@@ -682,6 +682,7 @@ Inner Banner
   display: block;
   width: 100%;
   text-align: center;
+valign:bottom;
   float: left;
   margin: 0;
 }
@@ -722,7 +723,7 @@ Inner Banner
 
 #clients img {
   max-width: 100%;
-  opacity: 0.5;
+  
   transition: 0.3s;
   padding: 15px 0;
 }
@@ -986,7 +987,7 @@ p.help-block li {
 
 #team .member .pic img {
   max-width: 100%;
-  padding: 20px 20px 0;
+  padding: 20px 10px 0;
 }
 
 #team .member .details {

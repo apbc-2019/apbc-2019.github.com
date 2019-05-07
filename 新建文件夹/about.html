@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+	img{display:block;}
+	.banner {width:1350px;height:545px;margin:0% auto;background:#cccccc;overflow:hidden;position:relative;z-index:1}
+	.banner ul { position:absolute;left:0;top:0;z-index:100;}
+	.banner ul li { display:block;width:1350px;height:550px;float:left;}
+	.banner .con { position:absolute; left:45%; bottom:3%;z-index:101; }
+	.banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
+	.banner .con a.active { background:#fff;}
+	.banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
+	.banner .left { position:absolute; top:40%;left:2%;z-index:103;}
+	.banner .right { position:absolute; top:40%;right:2%;z-index:103;}
+</style>
+
+
+
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<title>APBC 2019-Hangzhou,China</title>
+
+  <!-- Main Stylesheet File -->
+  <link href="css/style.css" rel="stylesheet"> 
+</head>
+
+<body id="body">
+
+  <!--==========================
+    Top Bar
+  ============================-->
+  
+  </section>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <h1><a href="#body" class="scrollto">APBC 2019</a></h1> 
+        <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active" position:relative><a href="index.html">Call for Papers</a>
+<ul>
+              <li><a href="#">Research Track</a></li>
+              <li><a href="about.html">EPA Track</a></li>
+              <li><a href="#">Industry Track</a></li>
+              <li><a href="#">Tool Demo Track</a></li>
+<li><a href="#">RENE Track</a></li>
+              <li><a href="#">Workshop Track</a></li>
+              <li><a href="#">Joumal First Track</a></li>
+            </ul></li>
+          <li><a href="about.html">Registration</a></li>
+          <li><a href="services.html">Program</a>
+<ul>
+              <li><a href="#">Link Item 1</a></li>
+           
+            </ul></li>
+          <li><a href="portfolio.html">Workshops</a>
+<ul>
+              <li><a href="#">Link Item 1</a></li>
+           
+            </ul></li>
+          <li class="menu-has-children"><a href="">Committee</a>
+            <ul>
+              <li><a href="#">Link Item 1</a></li>
+              <li><a href="#">Link Item 3</a></li>
+              <li><a href="#">Link Item 4</a></li>
+              <li><a href="#">Link Item 5</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Venue</a>
+<ul>
+              <li><a href="#">Link Item 1</a></li>
+           
+            </ul></li>
+ <li class="menu-has-children"><a href="">Travel</a>
+            <ul>
+              <li><a href="#">Link Item 1</a></li>
+              <li><a href="#">Link Item 3</a></li>
+              <li><a href="#">Link Item 4</a></li>
+              <li><a href="#">Link Item 5</a></li>
+            </ul>
+          </li>
+        
+      </nav><!-- #nav-menu-container -->
+    </div>
+
+
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+
+<div class="banner">
+	<ul>
+    	<li><img src="image/1.jpg" /></li>
+        <li><img src="image/2.jpg" /></li>
+        <li><img src="image/3.jpg" /></li>
+    </ul>
+    
+    <div class="con"></div>
+
+    
+</div>
+
+
+<script type="text/javascript">
+	var index = 0;
+	var imgnum = $('.banner ul li').length;
+	var nmun='';
+	var imgwidth = $('.banner ul li').width();
+	var allimgwidth = imgwidth*imgnum;
+	$('.banner ul').css('width',allimgwidth);
+	
+	
+	$('.banner').hover(function(){
+		clearInterval(p);
+		$('.banner .u').fadeIn();
+	},function(){
+		pic();
+		$('.banner .u').fadeOut();
+		});
+	
+	function pic(){
+		
+		p=setInterval(function(){
+			index++;
+			
+			if(index>=imgnum){
+				index=0;
+			}
+			
+			selectimg(index);
+	
+		},3000);
+		
+	}
+	
+	function selectimg(index){
+		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
+		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+	}
+	
+	
+	$('.banner .left').click(function(){
+		index-=1;
+		if(index<0){
+				index=imgnum-1;
+			}
+		selectimg(index);
+		
+	});
+	
+	$('.banner .right').click(function(){
+		index+=1;
+		if(index>imgnum-1){
+				index=0;
+			}
+		selectimg(index);
+		
+	});
+	
+	for(var ni=0;ni<imgnum;ni++){
+		nmun +="<a href='javascript:;'></a>";
+	}
+	$('.banner .con').html(nmun);
+	$('.banner .con a').eq(0).addClass('active');
+	
+	$('.con a').each(function(i){
+		$(this).click(function(){
+		    index=i;
+			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
+			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+		});
+	});	
+	
+	pic();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="item" style="background-image: url('img/intro-carousel/1.jpg');"></div>  
+  </section><!-- #intro -->
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about" class="wow fadeInUp">
+      <div class="container">
+	    <div class="section-header">
+
+</div>
+</body>
+          <h2>Note to Authors</h2>
+          <p>The <b><a href="http://www.cvent.com/d/qbqrbk">registration system</a></b> is open! <b>NOTE</b>: Please complete your registration on PC since the mobile version is not supported at present.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="img/about-img.png" alt="">
+          </div>
+
+          <div class="col-lg-6 content">
+         
+			
+            <p>
+                Each accepted paper (except workshop papers)  must have <b>at least one author</b> registered at a professional member rate for All Events (see below). Papers for which the only registered authors are students must have one of the students register at the full (i.e., non-student) rate.
+            </p>
+            <p>
+                Each accepted workshop paper must have at least one author registered at a professional member rate for Workshop or All Events. Workshop papers for which the only registered authors are students must have one of the students register at the full (i.e., non-student) rate for Workshop or All Events.
+            </p>
+
+
+            <!--<p>The <b>registration system</b> is scheduled to be opened on <span style="color: #ff0000;"><strong><del><font color="red">10 Dec 2019 AoE</font></del> 13 Dec 2019(UTC+8)</strong></span>.</p>-->
+            <p style="text-align:justified;">The deadline for early registration is 23:59 of  <span style="color: #ff0000;"><strong>24 Jan 2019 AoE</strong></span>.
+            </p>
+            <p style="text-align:justified;">For questions about the registration, please contact <a
+                    href="mailto:saner19@zju.edu.cn">saner19@zju.edu.cn</a>.</p>
+           
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #about -->
+
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+      <div class="container">
+        <div class="section-header">
+          <h2>Fee</h2>
+          <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-hover">
+                <tbody>
+                <tr>
+                    <th bgcolor="#1E90FF">Membership</th>
+                    <th bgcolor="#1E90FF">Registration Type</th>
+                    <th bgcolor="#1E90FF">Early Registration</th>
+                    <th bgcolor="#1E90FF">Late/On Site Registration</th>
+                </tr>
+                <tr>
+                    <td>IEEE Member</td>
+                    <td>All Events </td>
+                    <td>600 USD</td>
+                    <td>750 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One Day</td>
+                    <td>240 USD</td>
+                    <td>300 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Workshop</td>
+                    <td>240 USD</td>
+                    <td>300 USD</td>
+                </tr>
+                <tr>
+                    <td>Non-Member</td>
+                    <td>All Events</td>
+                    <td>720 USD</td>
+                    <td>900 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One Day</td>
+                    <td>300 USD</td>
+                    <td>360 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Workshop</td>
+                    <td>300 USD</td>
+                    <td>360 USD</td>
+                </tr>
+                <tr>
+                    <td>Student Member</td>
+                    <td>All Events</td>
+                    <td>420 USD</td>
+                    <td>525 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One Day</td>
+                    <td>180 USD</td>
+                    <td>225 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Workshop</td>
+                    <td>180 USD</td>
+                    <td>225 USD</td>
+                </tr>
+                <tr>
+                    <td>Student Non-member</td>
+                    <td>All Events</td>
+                    <td>525 USD</td>
+                    <td>630 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One Day</td>
+                    <td>225 USD</td>
+                    <td>270 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Workshop</font></td>
+                    <td>225 USD</td>
+                    <td>270 USD</td>
+                </tr>
+                <tr>
+                    <td>Life/Retired Member</td>
+                    <td>All Events</td>
+                    <td>330 USD</td>
+                    <td>412.5 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>One Day</td>
+                    <td>120 USD</td>
+                    <td>180 USD</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Workshop</td>
+                    <td>120 USD</td>
+                    <td>180 USD</td>
+                </tr>
+                </tbody>
+            </table>
+            <ul>
+                <li>Students are requested to show their Student ID issued by their affiliation at the registration
+                    desk.
+                </li>
+                <li>IEEE members are requested to show their IEEE membership card (or electronic card) at the
+                    registration desk.
+                </li>
+            </ul>
+        </div>
+
+       
+    </section><!-- #services -->
+
+    <!--==========================
+      what is coverd?
+    ============================-->
+    <section id="clients" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>What is coverd?</h2>
+         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-hover">
+                <tbody>
+                <tr>
+                    <th bgcolor="#1E90FF">Registration Type</th>
+                    <th bgcolor="#1E90FF">Covered</th>
+                </tr>
+                <tr>
+                    <td>All Events</td>
+                    <td>Proceedings (softcopy), 4 buffet lunch tickets, 1 reception ticket, 1 banquet ticket, and access to all
+                        SANER sessions
+                    </td>
+                </tr>
+                <tr>
+                    <td>One Day</td>
+                    <td>Proceedings (softcopy), 1 buffet lunch ticket and access to the sessions of one day of the main
+                        conference
+                    </td>
+                </tr>
+                <tr>
+                    <td>Workshop</td>
+                    <td>Proceedings (softcopy), 1 buffet lunch ticket, and access to the workshop sessions</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p>&nbsp;</p>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped table-hover">
+                <tbody>
+                <tr>
+                    <th bgcolor="#1E90FF">Additional Ticket</th>
+                    <th bgcolor="#1E90FF">Fee</th>
+                </tr>
+                <tr>
+                    <td>Buffet lunch ticket</td>
+                    <td>25 USD</td>
+                </tr>
+                <tr>
+                    <td>Reception ticket</td>
+                    <td>30 USD</td>
+                </tr>
+                <tr>
+                    <td>Banquet ticket</td>
+                    <td>45 USD</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+      
+
+      </div>
+    </section><!-- #clients --> 
+    <!--==========================
+      Testimonials Section
+    ============================-->
+    <section id="testimonials" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Cancellation Policy</h2>
+          <p>All refund/cancellation requests must be provided in writing and received by
+                <span style="color: #ff0000;"><strong>24 Jan 2019.</strong></span> There will be an administrative fee
+                of
+                <span style="color: #ff0000;"><strong>2%</strong></span> deducted from each refund.<br/>
+        </div>
+        
+ <!-- JavaScript  -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/magnific-popup/magnific-popup.min.js"></script>
+  <script src="lib/sticky/sticky.js"></script> 
+ <script src="contact/jqBootstrapValidation.js"></script>
+ <script src="contact/contact_me.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
