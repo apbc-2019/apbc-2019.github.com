@@ -75,7 +75,7 @@ document.writeln("          </li>");
 document.writeln("          <li><a href=\'Venue.html\'>Venue</a></li>");
 document.writeln(" <li class=\'menu-has-children\'><a href=\'\'>Travel</a>");
 document.writeln("            <ul>");
-document.writeln("              <li><a href=\'guangzhou.html\'>Transportation</a></li>");
+document.writeln("              <li><a href=\'transportation.html\'>Transportation</a></li>");
 document.writeln("              <li><a href=\'guangzhou.html\'>About Guangzhou</a></li>");
 document.writeln("            </ul>");
 document.writeln("          </li>");
