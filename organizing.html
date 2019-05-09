@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <script src="head.js"></script>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<style type="text/css">
+	*{margin:0;padding:0;}
+
+	.banner {width:100%;height:530px;margin:0% auto;background:#cccccc;overflow:hidden;position:relative;z-index:1}
+	.banner ul { position:absolute;left:0;top:0;z-index:100;}
+	.banner ul li { display:block;width:1350px;height:550px;float:left;}
+	.banner .con { position:absolute; left:48%; bottom:3%;z-index:101; }
+	.banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
+	.banner .con a.active { background:#fff;}
+	.banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
+	.banner .left { position:absolute; top:40%;left:2%;z-index:103;}
+	.banner .right { position:absolute; top:40%;right:2%;z-index:103;}
+</style>
+
+
+
+<body id="body">
+<div class="banner">
+	<ul>
+    	<li><img src="image/1.jpg" /></li>
+        <li><img src="image/2.jpg" /></li>
+        <li><img src="image/3.jpg" /></li>
+    </ul>
+    <div class="con"></div>
+</div>
+<script type="text/javascript">
+	var index = 0;
+	var imgnum = $('.banner ul li').length;
+	var nmun='';
+	var imgwidth = $('.banner ul li').width();
+	var allimgwidth = imgwidth*imgnum;
+	$('.banner ul').css('width',allimgwidth);
+	
+	
+	$('.banner').hover(function(){
+		clearInterval(p);
+		$('.banner .u').fadeIn();
+	},function(){
+		pic();
+		$('.banner .u').fadeOut();
+		});
+	
+	function pic(){
+		
+		p=setInterval(function(){
+			index++;
+			
+			if(index>=imgnum){
+				index=0;
+			}
+			
+			selectimg(index);
+	
+		},3000);
+		
+	}
+	
+	function selectimg(index){
+		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
+		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+	}
+	
+	
+	$('.banner .left').click(function(){
+		index-=1;
+		if(index<0){
+				index=imgnum-1;
+			}
+		selectimg(index);
+		
+	});
+	
+	$('.banner .right').click(function(){
+		index+=1;
+		if(index>imgnum-1){
+				index=0;
+			}
+		selectimg(index);
+		
+	});
+	
+	for(var ni=0;ni<imgnum;ni++){
+		nmun +="<a href='javascript:;'></a>";
+	}
+	$('.banner .con').html(nmun);
+	$('.banner .con a').eq(0).addClass('active');
+	
+	$('.con a').each(function(i){
+		$(this).click(function(){
+		    index=i;
+			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
+			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
+		});
+	});	
+	
+	pic();
+</script>
+
+  <!--==========================
+    Top Bar
+  ============================-->
+ 
+ 
+
+
+  <main id="main">
+
+   
+ 
+  
+
+    <!--==========================
+      Our Team 两个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>organizing committee</h2>
+        </div>
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>Honorary Chairs</b></p>
+
+
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+              <div class="pic2"><a href="https://www.uis.no/article.php?articleID=73769&categoryID=11198" target="_blank"><img src="image/team1.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Chunming Rong</h4>
+                <span>University of Stavanger, Norway</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+ <div class="pic2"><a href="https://https://www.baidu.com/link?url=Lts68yWW1tYQg89Y49u1rXaaVlpgC7TA1a3xhcsHQWW6NzTThzYgdtuMftmCzws7&wd=&eqid=b39ddf4e0008391b000000035cd2beab" target="_blank"><img src="image/team2.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Michael R. Lyu</h4>
+                <span>Chinese University of Hong Kong, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+<!--==========================
+      Our Team 三个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>General Chairs</b></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.baidu.com/link?url=B65GMjwZqqDYz6bAhTCxoQSWZ1hOZfVZqaXtgoup7efR5PAHc0RF9506R0EQ2ODX&wd=&eqid=a4fc3c5b00010c1b000000035cd2bfe8" target="_blank"><img src="image/team3.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Yan Zhang</h4>
+                <span>University of Oslo, Norway</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.baidu.com/link?url=rHDeTpCYc-FiNPHP8HFKy2OK_iiLg-IdqoOk-eNBsKpjdwgQs16JP1xuC5eEFVrUzYm_REG6SiRRfr1meC1cq105Va24mJWJI8oX0iCYh8e&wd=&eqid=cb012cd90005c442000000035cd2b6c7" target="_blank"><img src="image/team4.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Kuan-Ching Li</h4>
+                <span> Providence University, Taiwan</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.researchgate.net/profile/Zibin_Zheng" target="_blank"><img src="image/team5.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Zibin Zheng</h4>
+                <span>Sun Yat-sen University, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+<!--==========================
+      Our Team 三个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>Program Chairs</b></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.researchgate.net/profile/Patrick_Hung4" target="_blank"><img src="image/team6.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Patrick C. K. Hung</h4>
+                <span>University of Ontario Institute of Technology, Canada </span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.researchgate.net/profile/Hong-Ning_Dai" target="_blank"><img src="image/team7.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Hong-Ning Dai</h4>
+                <span> Macau University of Science and Technology, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-8">
+            <div class="member">
+<div class="pic2"><a href="https://www.researchgate.net/profile/Zibin_Zheng" target="_blank"><img src="image/team8.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Mingdong Tang</h4>
+                <span>Guangdong University of Foreign Studies, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+
+ <!--==========================
+      Our Team Section一个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>Local Organizing Committee Chair</b></p>
+        </div>
+            <div class="member">
+              <div class="pic1"><img src="image/team9.jpg" alt="" ></div>
+              <div class="details">
+                <h4>Xiangping Chen</h4>
+                <span>Sun Yat-sen University, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+
+    <!--==========================
+      Our Team 两个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>Publicity Chairs</b></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+              <div class="pic2"><a href="https://www.baidu.com/link?url=D56lOSW7JC3I0AV301C_8wpd94yZUrmp_3OSMw4p9yW7NekXJGLLGdSesujGjXCXIOrHcvk7q-L08X517WIMqK&wd=&eqid=9783b6fe002fd6d9000000035cd2c545" target="_blank"><img src="image/team10.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Daniel Xiapu Luo</h4>
+                <span>The Hong Kong Polytechnic University, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+<div class="pic2"><a href="http://school.freekaoyan.com/guangxi/guet/20140630/1404132531306252.shtml" target="_blank"><img src="image/team11.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Yong Ding</h4>
+                <span>Guilin University of Electronic Technology, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+ 
+
+
+ <!--==========================
+      Our Team 两个人
+    ============================-->
+    <section id="team" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+<p style="text-align: center; margin-top: 15px;line-height:30px;font-size=30px"><b>Publication Chairs</b></p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+              <div class="pic2"><a href="https://www.baidu.com/link?url=D56lOSW7JC3I0AV301C_8wpd94yZUrmp_3OSMw4p9yW7NekXJGLLGdSesujGjXCXIOrHcvk7q-L08X517WIMqK&wd=&eqid=9783b6fe002fd6d9000000035cd2c545" target="_blank"><img src="image/team12.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Jiajing Wu</h4>
+                <span>Sun Yat-sen University, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <div class="member">
+<div class="pic2"><a href="http://school.freekaoyan.com/guangxi/guet/20140630/1404132531306252.shtml" target="_blank"><img src="image/team13.jpg" alt=""></a></div>
+              <div class="details">
+                <h4>Wei Liang</h4>
+                <span> Xiamen University of Technology, China</span>
+                <div class="social">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- #team -->
+
+ 
+ 
+
+
+
+
+   
+ 
+  
+
+   
+
+
+ 
+
+ 
+ 
+
+  </main>
+
+
+
+
+
+
+
+</body>
+</html>

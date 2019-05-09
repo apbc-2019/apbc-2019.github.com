@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 body {
   background: #fff;
   color: #444;
@@ -972,7 +979,7 @@ p.help-block li {
 --------------------------------*/
 #team {
   background: #fff;
-  padding: 60px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 #team .member {
@@ -987,7 +994,19 @@ p.help-block li {
 
 #team .member .pic img {
   max-width: 100%;
-  padding: 20px 10px 0;
+  padding: 0px 10px 0;
+}
+#team .member .pic1 img {
+  max-width:150px;
+  padding: 0px 0 0 ;
+}
+#team .member .pic2 img {
+  max-width:150px;
+  padding: 0px 0 0 ;
+}
+#team .member .pic3 img {
+  max-width:150px;
+  padding: 0px 0 0 ;
 }
 
 #team .member .details {
