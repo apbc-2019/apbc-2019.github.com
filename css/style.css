@@ -447,7 +447,7 @@ h3 {
 }
 
 #mobile-nav ul li a {
-  color: #fffc;
+  color: white;
   font-size: 16px;
   overflow: hidden;
   padding: 10px 22px 10px 15px;
@@ -459,7 +459,7 @@ h3 {
 }
 
 #mobile-nav ul li a:hover {
-  color: #fff;
+  color: green;
 }
 
 #mobile-nav ul li li {
@@ -472,15 +472,15 @@ h3 {
   z-index: 99;
   padding: 15px;
   cursor: pointer;
-  color: #fff;
+  color: white;
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
-  color: #00b1e4;
+  color:white;
 }
 
 #mobile-nav ul .menu-item-active {
-  color: #00b1e4;
+  color: white;
 }
 
 #mobile-body-overly {
@@ -504,7 +504,7 @@ body.mobile-nav-active #mobile-nav {
 }
 
 body.mobile-nav-active #mobile-nav-toggle {
-  color: #fff;
+  color: white;
 }
 /*-------------------------------------------------
 Inner Banner
