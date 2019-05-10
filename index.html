@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html lang="en">
 
  <script src="head.js"></script>
@@ -36,109 +36,18 @@
     </style>
     <style type="text/css">
         td {
-            text-align: center; /*ÉèÖÃË®Æ½¾ÓÖÐ*/
-            vertical-align: middle !important; /*ÉèÖÃ´¹Ö±¾ÓÖÐ*/
+            text-align: center; /*è®¾ç½®æ°´å¹³å±…ä¸­*/
+            vertical-align: middle !important; /*è®¾ç½®åž‚ç›´å±…ä¸­*/
         }
 
     </style>
 
-<script src="js/jquery-1.11.3.min.js"></script>
-<style type="text/css">
-	*{margin:0;padding:0;}
 
-	.banner {width:100%;height:530px;margin:0% auto;background:#cccccc;overflow:hidden;position:relative;z-index:1}
-	.banner ul { position:absolute;left:0;top:0;z-index:100;}
-	.banner ul li { display:block;width:1350px;height:550px;float:left;}
-	.banner .con { position:absolute; left:48%; bottom:3%;z-index:101; }
-	.banner .con a { float:left; margin-right:8px; display:block; width:8px; height:8px; border-radius:100%; background:#000;z-index:101;}
-	.banner .con a.active { background:#fff;}
-	.banner .u { width:30px;height:20px;background:rgba(255,255,255,0.5); display:none;}
-	.banner .left { position:absolute; top:40%;left:2%;z-index:103;}
-	.banner .right { position:absolute; top:40%;right:2%;z-index:103;}
-</style>
 <body>
 
 
-<div class="banner">
-	<ul>
-    	<li><img src="image/1.jpg" /></li>
-        <li><img src="image/2.jpg" /></li>
-        <li><img src="image/3.jpg" /></li>
-    </ul>
-    <div class="con"></div>
-</div>
-<script type="text/javascript">
-	var index = 0;
-	var imgnum = $('.banner ul li').length;
-	var nmun='';
-	var imgwidth = $('.banner ul li').width();
-	var allimgwidth = imgwidth*imgnum;
-	$('.banner ul').css('width',allimgwidth);
-	
-	
-	$('.banner').hover(function(){
-		clearInterval(p);
-		$('.banner .u').fadeIn();
-	},function(){
-		pic();
-		$('.banner .u').fadeOut();
-		});
-	
-	function pic(){
-		
-		p=setInterval(function(){
-			index++;
-			
-			if(index>=imgnum){
-				index=0;
-			}
-			
-			selectimg(index);
-	
-		},3000);
-		
-	}
-	
-	function selectimg(index){
-		$('.banner ul').animate({'margin-left':'-' + imgwidth*index + 'px'},600);
-		$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
-	}
-	
-	
-	$('.banner .left').click(function(){
-		index-=1;
-		if(index<0){
-				index=imgnum-1;
-			}
-		selectimg(index);
-		
-	});
-	
-	$('.banner .right').click(function(){
-		index+=1;
-		if(index>imgnum-1){
-				index=0;
-			}
-		selectimg(index);
-		
-	});
-	
-	for(var ni=0;ni<imgnum;ni++){
-		nmun +="<a href='javascript:;'></a>";
-	}
-	$('.banner .con').html(nmun);
-	$('.banner .con a').eq(0).addClass('active');
-	
-	$('.con a').each(function(i){
-		$(this).click(function(){
-		    index=i;
-			$('.banner ul').animate({'margin-left':'-' + imgwidth*i + 'px'},600);
-			$('.con a').eq(index).addClass('active').siblings('a').removeClass('active');
-		});
-	});	
-	
-	pic();
-</script>
+  <main id="main">
+
 
 <!--==========================
       About Section
@@ -194,7 +103,7 @@
 
                 <div class="col-md-7">
                     <hr>
-                            <p style="text-align: justify; margin-top: 0px;line-height:30px">BlockSys'is a research conference on the theory and practice of blockchain and trustworthy systems. The blockchain technology is transforming industries by enabling anonymous and trustful transactions in decentralized and trustless environments. As a result, blockchain technology and other technologies for developing trustworthy systems can be used to reduce system risks, mitigate financial fraud and cut down operational cost. BlockSys¡¯ provides scientists and engineers from both industry and academia a platform to present their ongoing work, relate their research outcomes and experiences, and discuss the best and most efficient techniques for the development of blockchain and trustworthy systems.</p>
+                            <p style="text-align: justify; margin-top: 0px;line-height:30px">BlockSys' is a research conference on the theory and practice of blockchain and trustworthy systems. The blockchain technology is transforming industries by enabling anonymous and trustful transactions in decentralized and trustless environments. As a result, blockchain technology and other technologies for developing trustworthy systems can be used to reduce system risks, mitigate financial fraud and cut down operational cost. BlockSys' provides scientists and engineers from both industry and academia a platform to present their ongoing work, relate their research outcomes and experiences, and discuss the best and most efficient techniques for the development of blockchain and trustworthy systems.</p>
                    
                     <hr>
                 </div>
@@ -211,7 +120,7 @@
         </div>
 
 <!--==========================
-      Our Team Èý¸öÈË
+      Our Team ä¸‰ä¸ªäºº
     ============================-->
     <section id="team" class="wow fadeInUp">
       <div class="container">
@@ -223,7 +132,7 @@
 <div class="pic2"><a href="" target="_blank"><img src="image/logo1.jpg" alt=""></a></div>
               <div class="details">
                 <h4>Sun Yat-sen University, China</h4>
-                <span>Sponsor unit </span>
+                <span>Organized By </span>
                 <div class="social">
                 </div>
               </div>
@@ -244,8 +153,8 @@
             <div class="member">
 <div class="pic2"><a href="" target="_blank"><img src="image/logo3.jpg" alt=""></a></div>
               <div class="details">
-                <h4>Blockchain committee£¬Computer academy of Guangdong</h4>
-                <span>Supporting unit</span>
+                <h4>Blockchain committee, Computer academy of Guangdong</h4>
+                <span>Supporting Unit</span>
                 <div class="social">
                 </div>
               </div>
