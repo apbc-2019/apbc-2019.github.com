@@ -58,7 +58,7 @@ document.writeln("      </div>");
 document.writeln("");
 document.writeln("     <nav id=\'nav-menu-container\'>");
 document.writeln("        <ul class=\'nav-menu\'>");
-document.writeln("          <li><a href=\'call.html\'>Call for Paper</a></li>");
+document.writeln("          <li><a href=\'call.html\'>Call for Papers</a></li>");
 document.writeln("          <li><a href=\'registration.html\'>Registration</a></li>");
 document.writeln("          <li><a href=\'program.html\'>Program</a></li>");
 document.writeln("          <li class=\'menu-has-children\' position:relative><a href=\'#\'>Committee</a>");
