@@ -61,7 +61,7 @@ document.writeln("        <ul class=\'nav-menu\'>");
 document.writeln("          <li><a href=\'index.html\'>Home</a></li>");
 document.writeln("          <li><a href=\'call.html\'>Call for Papers</a></li>");
 document.writeln("          <li><a href=\'registration.html\'>Registration</a></li>");
-document.writeln("          <li class=\'program.html\' position:relative><a href=\'#\'>Program</a>");
+document.writeln("          <li class=\'menu-has-children\' position:relative><a href=\'program.html\'>Program</a>");
 document.writeln("            <ul>");
 document.writeln("              <li><a href=\'keynotes.html\'>Keynotes</a></li>");
 document.writeln("            </ul>");
